@@ -15,3 +15,38 @@ As extra credit
 1. Have an /articles scaffolding endpoint to CRUD articles
 2. Add an Author class, where Author `has_many :articles` and Article
    `belongs_to :author`
+
+
+## How to bourbon with Rails
+
+1. Add the following to your Gemfile
+  ```ruby
+  gem 'bitters'
+  gem 'bourbon'
+  gem 'near'
+  ```
+2. Run `bundle`
+3. Go the stylesheet directory
+  ```
+  cd app/assets/stylesheets
+  ```
+4. And run the installers
+  ```
+  bourbon install
+  neat install
+  bitters install
+  cd ../../..
+  ```
+5. Rename app/assets/stylesheets/application.css to
+   app/assets/stylesheets/application.scss
+6. Remove everything in app/assets/stylesheets/application.scss
+7. Add following to app/assets/stylesheets/application.scss
+  ```scss
+  @import "bourbon";
+  @import "base/base";
+  @import "neat";
+  ```
+8. uncomment the following line in `base/_base.scss`
+  ```
+  @import "grid-settings";
+  ```
