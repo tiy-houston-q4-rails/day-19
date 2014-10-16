@@ -1,0 +1,28 @@
+<h1>Transactions</h1>
+
+<%= form_tag root_path, method: :get do %>
+
+  <%= select_tag "foobar", options_from_collection_for_select(@products, "id", "name", params[:product_ids]), include_blank: true %>
+
+  <%= submit_tag "Search", class: "btn btn-default btn-lg" %>
+<% end %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Posted</th>
+      <th>Product</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.posted.strftime("%m-%e-%y %H:%M") %></td>
+        <td><%= link_to transaction.product.name, root_path(foobar: transaction.product_id) %></td>
+        <td><%= number_to_currency transaction.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

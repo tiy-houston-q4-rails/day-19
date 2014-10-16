@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<h3>Transactions - Total: <%= number_to_currency @product.transactions.sum(:amount) %></h3>
+
+<% @product.transactions.each do |transaction| %>
+  <%= transaction.posted.strftime("%m-%e-%y %H:%M") %> -> <%= number_to_currency transaction.amount %><br/>
+<% end %>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
