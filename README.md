@@ -27,26 +27,34 @@ As extra credit
   ```
 2. Run `bundle`
 3. Go the stylesheet directory
+
   ```
   cd app/assets/stylesheets
   ```
+
 4. And run the installers
+
   ```
   bourbon install
   neat install
   bitters install
   cd ../../..
   ```
+
 5. Rename app/assets/stylesheets/application.css to
    app/assets/stylesheets/application.scss
 6. Remove everything in app/assets/stylesheets/application.scss
 7. Add following to app/assets/stylesheets/application.scss
+
   ```scss
   @import "bourbon";
   @import "base/base";
   @import "neat";
   ```
+
 8. uncomment the following line in `base/_base.scss`
+
   ```
   @import "grid-settings";
   ```
+
