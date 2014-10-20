@@ -20,11 +20,13 @@ As extra credit
 ## How to bourbon with Rails
 
 1. Add the following to your Gemfile
+
   ```ruby
   gem 'bitters'
   gem 'bourbon'
-  gem 'near'
+  gem 'neat'
   ```
+
 2. Run `bundle`
 3. Go the stylesheet directory
 
@@ -43,7 +45,8 @@ As extra credit
 
 5. Rename app/assets/stylesheets/application.css to
    app/assets/stylesheets/application.scss
-6. Remove everything in app/assets/stylesheets/application.scss
+6. Remove everything in app/assets/stylesheets/application.scss. **No really, do
+   this**
 7. Add following to app/assets/stylesheets/application.scss
 
   ```scss
